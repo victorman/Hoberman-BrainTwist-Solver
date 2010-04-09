@@ -14,10 +14,16 @@ public class Triangle {
 		this.p2 = p2;
 	}
 	
-	public void rotate(){
+	public void rotateCW(){
 		Point t = new Point(p0.petal);
 		p0.petal = p1.petal;
 		p1.petal = p2.petal;
 		p2.petal = t.petal;
+	}
+	public void rotateCCW(){
+		Point t = new Point(p0.petal);
+		p0.petal = p2.petal;
+		p2.petal = p1.petal;
+		p1.petal = t.petal;
 	}
 }
