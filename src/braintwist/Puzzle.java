@@ -9,7 +9,7 @@ import static braintwist.Petal.*;
 import static braintwist.ColorCode.*;
 
 public class Puzzle {
-	private Petal[] pet;
+	private byte[] pet;
 	private Triangle[] tri;
 	
 	public Puzzle(){
@@ -23,7 +23,7 @@ public class Puzzle {
 		tri[6] = new Triangle(10,4,2);
 		tri[7] = new Triangle(9,7,5);
 		
-		pet = new Petal[12];
+		pet = new byte[12];
 		/* 0 */ pet[0]  = p7;
 		/* 1 */ pet[3]  = 
 		/* 2 */ pet[4]  = 
