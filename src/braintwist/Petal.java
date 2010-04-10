@@ -25,6 +25,6 @@ public class Petal {
 	}
 	
 	public static byte code(byte c1, byte c2){
-		return (byte) (c1 ^ c2);
+		return (byte) (c1 | c2);
 	}
 }

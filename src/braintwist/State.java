@@ -2,6 +2,8 @@ package braintwist;
 
 import java.util.*;
 import java.io.*;
+import polygons.CPolygon;
+import polygons.TriangleP;
 
 public class State {
 	byte[] state = new byte[12];
@@ -122,4 +124,8 @@ public class State {
 		
 		return s;
 	}
+
+    public TriangleP[] getTriangles(int[] x, int[] y, boolean[] up) {
+        return null;
+    }
 }
