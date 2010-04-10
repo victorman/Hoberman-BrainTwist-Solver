@@ -1,6 +1,6 @@
 package braintwist;
 /**
- * @author Not Victor
+ * @author Victor
  * testing
  */
 import java.awt.Color;

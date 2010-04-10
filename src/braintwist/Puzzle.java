@@ -1,30 +1,14 @@
 package braintwist;
 
-import java.util.*;
-import java.io.*;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
-import polygons.TriangleP;
 
 import static braintwist.ColorCode.*;
 
 public class Puzzle {
 	private Petal[] pet;
         private State curState;
-        /*
-        public static Triangle[] tri = {
-            new Triangle(0, 1, 2), // 0
-            new Triangle(3, 4, 5), // 1
-            new Triangle(6, 7, 8), // 2
-            new Triangle(9, 10, 11), // 3
-            new Triangle(0, 3, 6), // 4
-            new Triangle(1, 8, 11), // 5
-            new Triangle(10, 4, 2), // 6
-            new Triangle(9, 7, 5) // 7
-        };
-         *
-         */
 
         public static Triangle[] tri = {
             new Triangle(0, 1, 2), // 0
@@ -84,7 +68,7 @@ public class Puzzle {
 			//i++;
 			State c = q.poll();
 			visited.add(c);
-			System.out.println("Current state: "+c);
+//			System.out.println("Current state: "+c);
 			
 			if(c.isGoal(tri)){
 				System.out.println("Solved!");

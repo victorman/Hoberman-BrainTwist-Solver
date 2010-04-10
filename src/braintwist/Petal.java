@@ -1,8 +1,10 @@
 package braintwist;
 
-import java.util.*;
-import java.io.*;
 import static braintwist.ColorCode.*;
+
+/*
+ * @author crazy
+ */
 
 public class Petal {
 	public final byte ID;

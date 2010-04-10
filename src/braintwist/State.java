@@ -2,9 +2,6 @@ package braintwist;
 
 import java.awt.Color;
 import java.util.*;
-import java.io.*;
-import polygons.CPolygon;
-import polygons.TriangleP;
 
 public class State implements Comparable<State> {
         int fitness;

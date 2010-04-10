@@ -1,8 +1,5 @@
 package braintwist;
 
-import java.util.*;
-import java.io.*;
-
 public class Triangle {
 	public int[] points;
 	
