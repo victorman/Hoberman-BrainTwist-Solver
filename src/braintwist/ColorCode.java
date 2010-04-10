@@ -1,8 +1,9 @@
 package braintwist;
 /**
- * @author Victor
+ * @author Not Victor
  * testing
  */
+import java.awt.Color;
 import java.util.*;
 import java.io.*;
 
@@ -15,4 +16,38 @@ public class ColorCode {
 	public static final byte Red = 2;
 	public static final byte Orange = 4;
 	public static final byte Magenta = 8;
+
+        public static Color getColorI(byte b) {
+            int c = (byte)0xF & b;
+            switch (c) {
+                case 1:
+                    return Color.BLUE;
+                case 2:
+                    return Color.RED;
+                case 4:
+                    return Color.ORANGE;
+                case 8:
+                    return Color.MAGENTA;
+                default:
+                    return Color.BLACK;
+            }
+            
+        }
+
+        public static Color getColorO(byte b) {
+            int c = ((byte)0xF & (b>>4));
+            switch (c) {
+                case 1:
+                    return Color.YELLOW;
+                case 2:
+                    return Color.CYAN;
+                case 4:
+                    return Color.PINK;
+                case 8:
+                    return Color.GREEN;
+                default:
+                    return Color.BLACK;
+            }
+
+        }
 }
