@@ -2,24 +2,51 @@ package braintwist;
 
 import java.util.*;
 import java.io.*;
+import java.util.HashSet;
+import java.util.LinkedList;
+
+import static braintwist.ColorCode.*;
 
 public class Puzzle {
-	private Tetrahedron tetra1;
-	private Tetrahedron tetra2;
+	private Petal[] pet;
 	private Triangle[] tri;
 	
-	public Puzzle(Point[] p){
+	public Puzzle(){
 		tri = new Triangle[8];
-		tri[0] = new Triangle(p[0],p[1],p[2]);
-		tri[1] = new Triangle(p[3],p[4],p[5]);
-		tri[2] = new Triangle(p[6],p[7],p[8]);
-		tri[3] = new Triangle(p[9],p[10],p[11]);
-		tri[4] = new Triangle(p[0],p[3],p[6]);
-		tri[5] = new Triangle(p[1],p[8],p[11]);
-		tri[6] = new Triangle(p[10],p[4],p[2]);
-		tri[7] = new Triangle(p[9],p[7],p[5]);
+		tri[0] = new Triangle(0,1,2);
+		tri[1] = new Triangle(3,4,5);
+		tri[2] = new Triangle(6,7,8);
+		tri[3] = new Triangle(9,10,11);
+		tri[4] = new Triangle(0,3,6);
+		tri[5] = new Triangle(1,8,11);
+		tri[6] = new Triangle(10,4,2);
+		tri[7] = new Triangle(9,7,5);
+		
+		pet = new Petal[12];
+		pet[0] = new Petal(Red, Yellow);
+		pet[1] = new Petal(Red, Lime);
+		pet[2] = new Petal(Red, Cyan);
+		pet[3] = new Petal(Blue, Lime);
+		pet[4] = new Petal(Blue, Cyan);
+		pet[5] = new Petal(Blue, Green);
+		pet[6] = new Petal(Magenta, Green);
+		pet[7] = new Petal(Magenta, Yellow);
+		pet[8] = new Petal(Magenta, Cyan);
+		pet[9] = new Petal(Orange, Green);
+		pet[10] = new Petal(Orange, Yellow);
+		pet[11] = new Petal(Orange, Lime);
 
-		tetra1 = new Tetrahedron(tri[0],tri[1],tri[2],tri[3]);
-		tetra2 = new Tetrahedron(tri[4],tri[5],tri[6],tri[7]);
+		
+	}
+	
+	public void solve(){
+		State initial = new State(pet);
+		
+		LinkedList<State> q = new LinkedList<State>();
+		q.add(initial);
+		
+		while(!q.isEmpty()){
+			
+		}
 	}
 }
