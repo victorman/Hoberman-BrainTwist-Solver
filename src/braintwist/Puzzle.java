@@ -5,6 +5,7 @@ import java.io.*;
 import java.util.HashSet;
 import java.util.LinkedList;
 
+import static braintwist.Petal.*;
 import static braintwist.ColorCode.*;
 
 public class Puzzle {
@@ -23,18 +24,18 @@ public class Puzzle {
 		tri[7] = new Triangle(9,7,5);
 		
 		pet = new Petal[12];
-//		pet[0]  = new Petal(Red, Yellow);
-//		pet[1]  = new Petal(Red, Lime);
-//		pet[2]  = new Petal(Red, Cyan);
-//		pet[3]  = new Petal(Blue, Lime);
-//		pet[4]  = new Petal(Blue, Cyan);
-//		pet[5]  = new Petal(Blue, Green);
-//		pet[6]  = new Petal(Magenta, Green);
-//		pet[7]  = new Petal(Magenta, Yellow);
-//		pet[8]  = new Petal(Magenta, Cyan);
-//		pet[9]  = new Petal(Orange, Green);
-//		pet[10] = new Petal(Orange, Yellow);
-//		pet[11] = new Petal(Orange, Lime);
+		/* 0 */ pet[0]  = p7;
+		/* 1 */ pet[3]  = 
+		/* 2 */ pet[4]  = 
+		/* 3 */ pet[2]  = 
+		/* 4 */ pet[6]  = 
+		/* 5 */ pet[5]  = 
+		/* 6 */ pet[10] = 
+		/* 7 */ pet[1]  = 
+		/* 8 */ pet[8]  = 
+		/* 9 */ pet[7]  = 
+		/*10 */ pet[9]  = 
+		/*11 */ pet[11] = 
 	}
 	
 	public void solve(){
