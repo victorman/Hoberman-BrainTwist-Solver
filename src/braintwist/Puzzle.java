@@ -72,12 +72,14 @@ public class Puzzle {
 			
 			if(c.isGoal(tri)){
 				System.out.println("Solved!");
-				for(Integer a : c.instructions){
-					System.out.println((a>>1)+", "+((a&1)==1));
-				}
+//				for(Integer a : c.instructions){
+//					System.out.println((a>>1)+", "+((a&1)==1));
+//				}
+                                System.out.println(c.getSolution());
+                                System.out.println("Solution in " + c.steps + " steps.");
 				return c;
 			}
-			State[] succ = c.getSuccessors(tri);
+			State[] succ = c.getSuccessors();
 			for(State st: succ){
 				//System.out.println(st+"===successors");
 				if(!visited.contains(st)){
@@ -104,9 +106,11 @@ public class Puzzle {
     }
 
     public void solver() {
+        System.out.println("Working...");
         curState = solve();
         curState.steps = 0;
-        curState.instructions = new LinkedList<Integer>();
+        curState.parent = null;
+//        curState.instructions = new LinkedList<Integer>();
     }
 
 }

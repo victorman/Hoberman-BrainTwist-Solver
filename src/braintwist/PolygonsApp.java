@@ -38,6 +38,7 @@ public class PolygonsApp extends javax.swing.JFrame {
         initAddedComponents();
 
         updateViews();
+        updateModelDisplay();
     }
 
     /** This method is called from within the constructor to
@@ -63,7 +64,8 @@ public class PolygonsApp extends javax.swing.JFrame {
         rot5b = new javax.swing.JButton();
         rot7b = new javax.swing.JButton();
         rot6b = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        randomB = new javax.swing.JButton();
+        sRandomB = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -146,10 +148,17 @@ public class PolygonsApp extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Random");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        randomB.setText("Random");
+        randomB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                randomBActionPerformed(evt);
+            }
+        });
+
+        sRandomB.setText("Super Random");
+        sRandomB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sRandomBActionPerformed(evt);
             }
         });
 
@@ -158,13 +167,8 @@ public class PolygonsApp extends javax.swing.JFrame {
         buttonPanelLayout.setHorizontalGroup(
             buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(buttonPanelLayout.createSequentialGroup()
-                .addContainerGap(95, Short.MAX_VALUE)
+                .addContainerGap(147, Short.MAX_VALUE)
                 .addGroup(buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, buttonPanelLayout.createSequentialGroup()
-                        .addGroup(buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rot0b)
-                            .addComponent(rot3b))
-                        .addGap(56, 56, 56))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, buttonPanelLayout.createSequentialGroup()
                             .addComponent(newListButton)
@@ -185,19 +189,28 @@ public class PolygonsApp extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(display)
                         .addContainerGap())))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, buttonPanelLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
-                .addGroup(buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(rot5b)
-                    .addComponent(rot4b))
-                .addGap(58, 58, 58))
+            .addGroup(buttonPanelLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addGroup(buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(sRandomB, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(randomB, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addGroup(buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, buttonPanelLayout.createSequentialGroup()
+                        .addGroup(buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(rot0b)
+                            .addComponent(rot3b))
+                        .addGap(56, 56, 56))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, buttonPanelLayout.createSequentialGroup()
+                        .addGroup(buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(rot5b)
+                            .addComponent(rot4b))
+                        .addGap(58, 58, 58))))
         );
         buttonPanelLayout.setVerticalGroup(
             buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(buttonPanelLayout.createSequentialGroup()
-                .addGroup(buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(buttonPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(newListButton)
@@ -216,12 +229,13 @@ public class PolygonsApp extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rot6b)
-                            .addComponent(rot7b))
-                        .addGap(44, 44, 44))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, buttonPanelLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
-                        .addGap(93, 93, 93)))
+                            .addComponent(rot7b)))
+                    .addGroup(buttonPanelLayout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(randomB)
+                        .addGap(85, 85, 85)
+                        .addComponent(sRandomB)))
+                .addGap(44, 44, 44)
                 .addGroup(buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(display)
                     .addComponent(clearButton))
@@ -249,7 +263,7 @@ public class PolygonsApp extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(displayPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE)
+                .addComponent(displayPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(controlInfoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -318,11 +332,18 @@ public class PolygonsApp extends javax.swing.JFrame {
         updateModelDisplay();
     }//GEN-LAST:event_rot6bActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void randomBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         int a = random.nextInt(8);
         model.rotateCW(Puzzle.tri[a]);
         updateModelDisplay();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void sRandomBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sRandomBActionPerformed
+        for (int i = 0; i < 50; i++ ) {
+            model.rotateCW(Puzzle.tri[random.nextInt(8)]);
+        }
+        updateModelDisplay();
+    }//GEN-LAST:event_sRandomBActionPerformed
 
     private void updateModelDisplay() {
         polygonList.clear();
@@ -355,8 +376,8 @@ public class PolygonsApp extends javax.swing.JFrame {
     private javax.swing.JPanel controlInfoPanel;
     private javax.swing.JButton display;
     private javax.swing.JPanel displayPanel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton newListButton;
+    private javax.swing.JButton randomB;
     private javax.swing.JButton rot0b;
     private javax.swing.JButton rot1b;
     private javax.swing.JButton rot2b;
@@ -365,6 +386,7 @@ public class PolygonsApp extends javax.swing.JFrame {
     private javax.swing.JButton rot5b;
     private javax.swing.JButton rot6b;
     private javax.swing.JButton rot7b;
+    private javax.swing.JButton sRandomB;
     // End of variables declaration//GEN-END:variables
 
     // private inner class DrawingPanel for drawing the polygons

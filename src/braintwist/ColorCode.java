@@ -4,8 +4,6 @@ package braintwist;
  * testing
  */
 import java.awt.Color;
-import java.util.*;
-import java.io.*;
 
 public class ColorCode {
 	public static final byte Yellow = 16;

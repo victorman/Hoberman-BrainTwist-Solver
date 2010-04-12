@@ -35,12 +35,4 @@ public interface IPolygon extends Comparable<IPolygon> {
     // pre: true
     // ret: point (x,y) is within this polygon
     public boolean containsPoint(int x, int y);
-
-    // pre: true
-    // ret: area enclosed by this polygon
-    public double getArea();
-
-    // pre: true
-    // ret: perimeter of this polygon
-    public double getPerimeter();
 }

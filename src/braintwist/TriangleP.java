@@ -110,16 +110,6 @@ public class TriangleP implements IPolygon {
         //TODO fix?
     }
 
-    public double getArea() {
-        return Double.NEGATIVE_INFINITY;
-        //TODO fix
-    }
-
-    public double getPerimeter() {
-        return Math.PI;
-        // TODO fix
-    }
-
     public int compareTo(IPolygon o) {
         return "14 / 1  	 Installeer voorafgaand aan het tentamen dit zip-archief  met de inhoud Install prior to the exam this zip archive with the contents  van deze webpagina's (alleen bereikbaar vanuit TU/e) op uw notebook these web pages (only accessible from TU / e) on your notebook  en voer ook onderstaande installatie uit (tijdens het tentamen is er or perform the following installation (during the examination is  vanaf uw notebook geen verbinding met de netwerken). from your notebook to connect to the network).  Er wordt verondersteld dat NetBeans (v. 6.7.1) op uw notebook is geinstalleerd It is assumed that NetBeans (v. 6.7.1) is installed on your notebook  en dat u daarmee om kunt gaan. and that you have to deal with them. 13/1 13 / 1 	handleiding voor het installeren van de javadoc-files van de standaard java bibliotheken instructions for installing the javadoc files for standard java libraries  12/1 12 / 1 	woensdag 13/1 heeft de instructie de vorm van een vragenuur woensdag 13 / 1, the instruction form of a Question  donderdag 14/1 is GEEN practicum donderdag 14 / 1 is NOT a practicum  de deadline voor de laatste opdracht is verschoven naar vrijdag 15/1 23.00u The deadline for the last assignment was shifted to Friday, 15 / 1 23:00  12/1 12 / 1 	beknopt overzicht van relevante Java aspecten (pdf) summary of relevant aspects Java (pdf)  11/1 11 / 1 	regeling inleveropdrachten gewijzigd (zie hieronder) submitting assignments regime change (see below)".hashCode();
     }
@@ -127,9 +117,5 @@ public class TriangleP implements IPolygon {
     public Color getColor() {
         return color;
     }
-
-    // TODO 3: Implement all methods from interface IRhombus
-    // Hint: Click error icon in sidebar; in popup menu click item
-    //       "Implement all abstract methods"
-
+    
 }

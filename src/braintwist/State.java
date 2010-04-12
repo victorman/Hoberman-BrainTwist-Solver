@@ -4,10 +4,14 @@ import java.awt.Color;
 import java.util.*;
 
 public class State implements Comparable<State> {
+    static final int MAX_MOVES = 11;
         int fitness;
 	byte[] state = new byte[12];
 	int steps;
-	LinkedList<Integer> instructions;
+//	LinkedList<Integer> instructions;
+        Triangle triangle;
+        boolean direction;
+        State parent;
         private Color[] colors = {Color.BLUE, Color.RED, Color.MAGENTA};
 
         private void calcFitness(){
@@ -53,35 +57,43 @@ public class State implements Comparable<State> {
 			state[i] = s[i];
 		}*/
 		state = s.state.clone();
-		instructions = (LinkedList<Integer>) s.instructions.clone();
+//		instructions = (LinkedList<Integer>) s.instructions.clone();
 		steps = s.steps+1;
+                parent = s;
 		this.calcFitness();
 	}
-	
+
+        public State(State s, Triangle t, boolean d) {
+            this(s);
+            triangle = t;
+            direction = d;
+            if (d) {
+            this.rotateCW(t);
+            } else {
+                this.rotateCCW(t);
+            }
+        }
+        
 	public State(Petal[] p){
 		for(int i = 0; i < p.length; i++){
 			state[i] = p[i].ID;
 		}
 		steps = 0;
-		instructions = new LinkedList<Integer>();
+//		instructions = new LinkedList<Integer>();
+                parent = null;
                 this.calcFitness();
 	}
 	
-	public State[] getSuccessors(Triangle[] t){
-                if(steps >= 50){
+	public State[] getSuccessors() {
+                if(steps >= MAX_MOVES){
                     return new State[0];
                 }
 		State[] ss = new State[16];
-		for(int i = 0; i < 16; i++){
-			ss[i] = new State(this);
-			if((i&1) == 0){
-				ss[i].rotateCW(t[i>>1]);
-			}
-			else{
-				ss[i].rotateCCW(t[i>>1]);
-			}
-                        ss[i].calcFitness();
-			ss[i].instructions.add(i);
+                Triangle t;
+		for(int i = 0; i < 8; i++){
+                    t = Puzzle.tri[i];
+                    ss[i] = new State(this, t, true);
+                    ss[i+8] = new State(this, t, false);
 		}
 		
 //		System.out.println("---A call to get successors---");
@@ -144,6 +156,13 @@ public class State implements Comparable<State> {
 		}
 		return true;
 	}
+
+        public String getSolution() {
+            if (parent == null)
+                return "";
+            return parent.getSolution()
+                    + (triangle.toString() + ", " + direction + "\n");
+        }
 	
 	public int hashCode(){
 		int hash = 0;
